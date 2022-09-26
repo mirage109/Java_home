@@ -7,7 +7,10 @@ public class Main {
         int arr[] = {55, -100, 300, 56, 1, -69, 1000, -1888, -2, 1, 3, 6, -1, 4, -5, 9
         };
         printIntArray(arr);
-        System.out.println("Min="+getMin(arr));
+        System.out.println("Min=" + getMin(arr));
+        String[] str = {"qwer", "rehuhrui", "dhfidi", "utrhutgjkd", "fjodioirio"};
+        System.out.println(getIndexOfLongestString(str));
+        System.out.println(str[getIndexOfLongestString(str)]);
     }
 
     public static void printIntArray(int[] arr) {
@@ -28,6 +31,17 @@ public class Main {
             }
         }
         return min;
+    }
+
+    //«адача є2. ƒан массив строк. –еализовать метод, который возвращает индекс самой длинной строки в данном массиве.      Ќапример: {УqweФ,ФaxcvbnФ,ФqwertyuioФ,ФqasФ} -> 2
+    public static int getIndexOfLongestString(String[] strings) {
+        int indexMax = 0;
+        for (int i = 0; i < strings.length; i += 1) {
+            if (strings[i].length() > strings[indexMax].length()) {
+                indexMax = i;
+            }
+        }
+        return indexMax;
     }
 
 }
